@@ -7,23 +7,23 @@
     <link href="./styles/style.css" rel="stylesheet" type="text/css">
     <title>Mural de avisos</title>
 </head>
-<body>
+<body onload="carregado()">
     <div id="container">
-        
-        <h1>Novo Post</h1>
-        
-        <input type="text" name="Title" id="title">
-        <input type="text" name="Description" id="description">
-        <input type="submit" value="send" id="submit">
+        <header class="header">
+            <h1>Novo Post</h1>
+            
+            <input type="text" name="Title" id="title">
+            <input type="text" name="Description" id="description">
+            <input type="submit" value="send" id="submit" oninput="attTilte()">
+        </header>
 
-        <h1>Mural</h1>
-
-        <div id="mural">
-            <p id="titleMural"></p>
+        <div id="mural" class="mural">
+            <h1>Mural</h1>
+            <p id="titleMural">texto exemplo</p>
         </div>
 
-        <div id="muralD">
-            <p id="descriptionMural"></p>
+        <div id="muralD" class="mural">
+            <p id="descriptionMural">texto exemplo</p>
         </div>
 
     </div>
