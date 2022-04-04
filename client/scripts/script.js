@@ -1,33 +1,34 @@
-// let title = window.document.getElementById("title");
-// let description = window.document.getElementById("description");
+function updatePost(){
 
+    fetch("http://localhost:3000/api/all")
+    .then(res => {
+        return res.json();
+    }).then(json =>{
 
-// // tMural = titulo do dMural
-// // dMural = descrição do mural
+        let postElements = '';
 
-// let tMural = window.document.getElementById("titleMural");
-// let dMural = window.document.getElementById("descriptionMural");
+        let posts = JSON.parse(json);
 
-// tMural = title.innerHTML
+        posts.array.forEach(post => {
+            let postElement = `<div id=${post.id} class="card mb-3">
+            <div class="card-header">
+                <h5 class="card-title">${post.title}</h5>
+            </div>
+            <div class="card-body">
+                <div class="card-text">${post.description}</div>
+            </div>
+        </div>`;
 
+            postElements += postElement; 
 
-function carregado(){
-    let titulo = localStorage.getItem("title");
-    let descricao = localStorage.getItem("description");
+        });
 
-    let title = document.getElementById("title");
-    let description = document.getElementById("description");
+        document.getElementById("posts").innerHTML = postElements
 
-    // title.innerHTML = titulo;
-    // description.innerHTML = descricao
-}
+    }) 
 
-function attTilte(element){
-    let valor = element.value;
-    console.log(valor);
+};
 
-    let titulo = localStorage.getItem("titleMural");
-    titulo.innerHTML = valor;
+function newPost(){
 
-    localStorage.setItem("titleMural", valor);
-}
+};
