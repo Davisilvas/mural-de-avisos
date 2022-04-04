@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () =>{
 
 function updatePost(){
 
-    fetch("http://localhost:3000/api/all").then(res => {
+    fetch("http://192.168.0.108:3000/api/all").then(res => {
         return res.json();
     }).then(json =>{
 
@@ -21,7 +21,7 @@ function updatePost(){
                 <div class="card-text">${post.description}</div>
             </div>
         </div>`;
-
+            //esses valores que foram passados na variável postElement tem que ser os mesmos que estão lá no array do servidor, ou seja o nome das chaves deve ser igual
             postElements += postElement; 
 
         });
