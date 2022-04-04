@@ -1,7 +1,10 @@
+document.addEventListener('DOMContentLoaded', () =>{
+    updatePost();
+});
+
 function updatePost(){
 
-    fetch("http://localhost:3000/api/all")
-    .then(res => {
+    fetch("http://localhost:3000/api/all").then(res => {
         return res.json();
     }).then(json =>{
 
@@ -9,7 +12,7 @@ function updatePost(){
 
         let posts = JSON.parse(json);
 
-        posts.array.forEach(post => {
+        posts.forEach((post) => {
             let postElement = `<div id=${post.id} class="card mb-3">
             <div class="card-header">
                 <h5 class="card-title">${post.title}</h5>
