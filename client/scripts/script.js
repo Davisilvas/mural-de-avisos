@@ -22,6 +22,7 @@ function updatePost(){
             </div>
         </div>`;
             //esses valores que foram passados na variável postElement tem que ser os mesmos que estão lá no array do servidor, ou seja o nome das chaves deve ser igual
+            // <button> delete </button> tentar fazer uma requisição desse tipo depois.
             postElements += postElement; 
 
         });
